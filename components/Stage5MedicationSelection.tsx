@@ -131,7 +131,7 @@ export default function Stage5MedicationSelection({ caseData, updateCaseData, on
                 <div key={medicineClass} className="border rounded-lg p-4">
                   <h3 className="text-lg font-medium text-black mb-3">{medicineClass}</h3>
                   <div className="space-y-2">
-                    {groupedMedications[medicineClass].map((medication, index) => {
+                    {groupedMedications[medicineClass].map((medication: any, index: number) => {
                       const isSelected = selectedMedications.some(
                         m => m.medicineName === medication.medicineName
                       )

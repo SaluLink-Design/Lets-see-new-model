@@ -17,14 +17,14 @@ export default function Stage6Export({ caseData, saveCase, onBack }: Stage6Props
 
   const generatePDF = () => {
     setIsGenerating(true)
-    
+
     try {
-      const doc = new jsPDF()
-      
+      const doc = new jsPDF() as any
+
       // Title
       doc.setFontSize(20)
       doc.text('SaluLink Chronic Treatment Report', 14, 20)
-      
+
       let yPos = 30
 
       // Clinical Note
@@ -49,20 +49,20 @@ export default function Stage6Export({ caseData, saveCase, onBack }: Stage6Props
         doc.setFontSize(14)
         doc.text('Selected ICD-10 Codes:', 14, yPos)
         yPos += 7
-        
+
         const icdTableData = caseData.selectedICDCodes.map(icd => [
           icd.code,
           icd.description
         ])
-        
+
         doc.autoTable({
           startY: yPos,
           head: [['ICD-10 Code', 'Description']],
           body: icdTableData,
           theme: 'grid',
         })
-        
-        yPos = (doc as any).lastAutoTable.finalY + 10
+
+        yPos = doc.lastAutoTable.finalY + 10
       }
 
       // Diagnostic Basket
@@ -70,22 +70,22 @@ export default function Stage6Export({ caseData, saveCase, onBack }: Stage6Props
         doc.setFontSize(14)
         doc.text('Diagnostic Basket:', 14, yPos)
         yPos += 7
-        
+
         const diagTableData = caseData.diagnosticBasket.map(item => [
           item.description,
           item.code,
           item.numTimes.toString(),
           item.documentation || 'N/A'
         ])
-        
+
         doc.autoTable({
           startY: yPos,
           head: [['Procedure/Test', 'Code', 'Times', 'Documentation']],
           body: diagTableData,
           theme: 'grid',
         })
-        
-        yPos = (doc as any).lastAutoTable.finalY + 10
+
+        yPos = doc.lastAutoTable.finalY + 10
       }
 
       // Ongoing Management Basket
@@ -93,22 +93,22 @@ export default function Stage6Export({ caseData, saveCase, onBack }: Stage6Props
         doc.setFontSize(14)
         doc.text('Ongoing Management Basket:', 14, yPos)
         yPos += 7
-        
+
         const ongTableData = caseData.ongoingBasket.map(item => [
           item.description,
           item.code,
           item.numTimes.toString(),
           item.documentation || 'N/A'
         ])
-        
+
         doc.autoTable({
           startY: yPos,
           head: [['Procedure/Test', 'Code', 'Times', 'Documentation']],
           body: ongTableData,
           theme: 'grid',
         })
-        
-        yPos = (doc as any).lastAutoTable.finalY + 10
+
+        yPos = doc.lastAutoTable.finalY + 10
       }
 
       // Medications
@@ -116,7 +116,7 @@ export default function Stage6Export({ caseData, saveCase, onBack }: Stage6Props
         doc.setFontSize(14)
         doc.text('Selected Medications:', 14, yPos)
         yPos += 7
-        
+
         const medTableData = caseData.selectedMedications.map(med => [
           med.medicineName,
           med.activeIngredient,
@@ -124,15 +124,15 @@ export default function Stage6Export({ caseData, saveCase, onBack }: Stage6Props
           med.cdaCore,
           med.cdaExecutive
         ])
-        
+
         doc.autoTable({
           startY: yPos,
           head: [['Medicine Name', 'Active Ingredient', 'Class', 'CDA Core/Saver', 'CDA Executive']],
           body: medTableData,
           theme: 'grid',
         })
-        
-        yPos = (doc as any).lastAutoTable.finalY + 10
+
+        yPos = doc.lastAutoTable.finalY + 10
       }
 
       // Chronic Medication Note
