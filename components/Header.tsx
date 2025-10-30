@@ -6,7 +6,7 @@ export default function Header() {
       <div className="flex items-center gap-6">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-            <span className="text-xl font-bold text-blue-600">SL</span>
+            <span className="text-xl font-bold text-purple-600">SL</span>
           </div>
           <div>
             <h1 className="text-2xl font-normal text-black">Authi 1.0</h1>

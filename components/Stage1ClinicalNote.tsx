@@ -58,7 +58,7 @@ export default function Stage1ClinicalNote({ caseData, updateCaseData, onNext }:
           <textarea
             value={note}
             onChange={(e) => setNote(e.target.value)}
-            className="w-full h-48 p-4 border border-gray-300 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full h-48 p-4 border border-gray-300 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-purple-500"
             placeholder="Enter or paste the patient's clinical note here..."
           />
         </div>

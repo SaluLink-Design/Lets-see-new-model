@@ -80,7 +80,7 @@ export default function Stage4TreatmentDocs({ caseData, updateCaseData, onNext, 
                     value={item.documentation || ''}
                     onChange={(e) => handleDocChange(index, e.target.value, 'diagnostic')}
                     placeholder="Enter documentation notes or results..."
-                    className="w-full h-24 p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full h-24 p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-500"
                   />
                   <div className="mt-2">
                     <label className="block text-sm text-gray-600 mb-1">Upload results (images/PDF)</label>
@@ -119,7 +119,7 @@ export default function Stage4TreatmentDocs({ caseData, updateCaseData, onNext, 
                     value={item.documentation || ''}
                     onChange={(e) => handleDocChange(index, e.target.value, 'ongoing')}
                     placeholder="Enter documentation notes or results..."
-                    className="w-full h-24 p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full h-24 p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-500"
                   />
                   <div className="mt-2">
                     <label className="block text-sm text-gray-600 mb-1">Upload results (images/PDF)</label>
