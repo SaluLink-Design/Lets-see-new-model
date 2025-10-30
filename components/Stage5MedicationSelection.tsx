@@ -96,7 +96,7 @@ export default function Stage5MedicationSelection({ caseData, updateCaseData, on
             <select
               value={planType}
               onChange={(e) => setPlanType(e.target.value)}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="KeyCare">KeyCare</option>
               <option value="Core">Core</option>
@@ -115,7 +115,7 @@ export default function Stage5MedicationSelection({ caseData, updateCaseData, on
               value={medicineClassFilter}
               onChange={(e) => setMedicineClassFilter(e.target.value)}
               placeholder="Search medicine class..."
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function Stage5MedicationSelection({ caseData, updateCaseData, on
             value={chronicMedNote}
             onChange={(e) => setChronicMedNote(e.target.value)}
             placeholder="Enter registration notes for chronic medication..."
-            className="w-full h-32 p-4 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full h-32 p-4 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
